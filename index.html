@@ -8,9 +8,16 @@
 	<meta name="description" content="" />
 	<style type="text/css">
 		* {margin:0;padding:0;text-align:center;}
+		.head {display:none;}
 		@media only screen and (max-width : 1200px) {  
 			p {padding:0 10px;box-sizing:border-box;}
 			img {width:100%;}
+			.chaewon {padding-top:50px;}
+			.head {display:block;position:fixed;top:0;left:0;right:0;height:50px;background:#666;line-height:50px;}
+			.head a {display:block;position:relative;float:left;width:50%;text-align:center;color:#fff;text-decoration:none;}
+			.head a:before {content:"";display:inline-block;width:25px;height:25px;margin:13px 6px 0 0;background:url(phone-icon.png) no-repeat 0 0;background-size:100% 100%;vertical-align:top;}
+			.head a.sms:before {background:url(messages.png) no-repeat 0 0;background-size:100% 100%;}
+			.head a.sms:after {content:"";display:block;position:absolute;top:13px;left:0;height:24px;border-left:1px solid #a1a1a1;}
 		}
 	</style>
 	<script>
@@ -25,7 +32,13 @@
 	</script>
 </head>
 <body>
-	<p><img src="img01.JPG" alt=""></p>
-	<p><img src="img02.JPG" alt=""></p>
+	<div class="chaewon">
+		<div class="head">
+			<a href="tel:010-5286-3635" class="call">전화하기</a>
+			<a href="sms:010-5286-3635" class="sms">문자하기</a>
+		</div>
+		<p><img src="img01.JPG" alt=""></p>
+		<p><img src="img02.JPG" alt=""></p>
+	</div>
 </body>
 </html>
