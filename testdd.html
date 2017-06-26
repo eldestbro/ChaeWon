@@ -14,7 +14,60 @@
 
 
 <!-- 공통CSS & JS -->
-<link rel="stylesheet" type="text/css" href="/wallet/common/css/offPriceMarket.css?v=2" />
+<style>
+	@charset "utf-8";
+/* BASE STYLE */
+html, body {margin:0;padding:0;font-size:13px;line-height:1.5;color:#333;background:#F3ECDA;-webkit-text-size-adjust:none;word-wrap:break-word;word-break:break-all;font-family:Helvetica;}
+p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button{margin:0;padding:0;}
+img{display:block;width:100%;height:auto}
+h1,h2,h3,h4,h5,h6 {font-size:0;}
+ul, ol, li {list-style:none;}
+li {display:block;}
+table{border-collapse:collapse;}
+a:link,a:active, a:visited {color:#000;text-decoration:none;cursor:pointer;}
+a:hover {color:#000;text-decoration:none;cursor:pointer;}
+caption, legend {display:none;}
+em,address{font-style:normal;}
+hr {display:none;}
+input {-webkit-appearance: none;border-radius:0;}
+button{overflow:visible;border:0 none;cursor:pointer;-moz-appearance:none;-o-appearance:none;-ms-appearance:none;-webkit-appearance:none;background-color:transparent;outline:none}
+button::-moz-focus-inner{padding:0;border:0}
+.hidden {display:none;}
+* {-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}
+
+/* HEADER */
+.header{position:fixed;top:0;left:0;width:360px;height:56px;background:#000}
+.header:after{display:block;content:"";clear:both}
+.header h1{float:left;width:88.5px;cursor:pointer}
+.header .gnb{float:left;width:271.5px}
+.header .gnb:after{display:block;content:"";clear:both}
+.header .gnb li{float:left;cursor:pointer}
+.header .gnb li:nth-child(1){width:67px}
+.header .gnb li:nth-child(2){width:55.5px}
+.header .gnb li:nth-child(3){width:57px}
+.header .gnb li:nth-child(4){width:92px}
+
+/* CONTENT */
+.content{width:360px;margin:56px 0 0 0;padding:0 0 50px 0}
+.content h2{width:360px}
+.content .conList{width:360px}
+.content .conList li{width:360px}
+
+/* FOOTER */
+#bottom{position:fixed;left:0;bottom:0;width:100%;height:50px;z-index:99;background:#1a1a1a;}
+#bottom .btm_back{display:block;float:left;width:49px;height:50px;margin-left:6px;background:url(../images/sp_bottom.png) no-repeat -6px 0;background-size:360px 100px;text-indent:-9999em}
+#bottom .btm_back:active{background:url(../images/sp_bottom.png) no-repeat -6px -50px;background-size:360px 100px}
+#bottom .btm_home{display:block;float:left;width:49px;height:50px;background:url(../images/sp_bottom.png) no-repeat -55px 0;background-size:360px 100px;text-indent:-9999em}
+#bottom .btm_home:active{background:url(../images/sp_bottom.png) no-repeat -55px -50px;background-size:360px 100px}
+#bottom .btm_r{display:block;float:right;margin-right:12px;padding:0 12px;line-height:50px;font-size:1em;font-weight:bold;color:#333;text-align:center}
+#bottom .btm_r:active{color:#666}
+#bottom .on{color:#fff;text-align:center}
+#bottom .on:active{color:#666}
+#bottom .btm_one{display:block;width:100%;line-height:50px;font-size:1em;font-weight:bold;color:#fff;text-align:center}
+#bottom .btm_one:active{color:#666}
+#bottom .btm_refresh{display:block;float:left;width:49px;height:50px;background:url(../images/sp_bottom.png) no-repeat -104px 0;background-size:360px 100px;text-indent:-9999em}
+#bottom .btm_refresh:active{background:url(../images/sp_bottom.png) no-repeat -104px -50px;background-size:360px 100px}
+	</style>
 <script type="text/javascript" src="/wallet/common/js/eventDisp/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="/wallet/common/js/eventDisp/mj.viewport.js"></script>
 <!-- //공통CSS & JS -->
