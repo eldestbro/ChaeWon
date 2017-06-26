@@ -72,25 +72,7 @@ button::-moz-focus-inner{padding:0;border:0}
 <script type="text/javascript" src="/wallet/common/js/eventDisp/mj.viewport.js"></script>
 <!-- //공통CSS & JS -->
 <script type="text/javascript">
-// VIEWPORT 설정
-function update(scale) {
-   document.getElementById("useragent").textContent = navigator.userAgent;
-   document.getElementById("scale").textContent = scale || "none";
-   if(mj.viewport.isIos()) {
-      document.getElementById("device").textContent = "iOS";
-   }else if (mj.viewport.isAndroid()) {
-      document.getElementById("device").textContent = "Android";
-   }else if (mj.viewport.isPCBrowser()) {
-      document.getElementById("device").textContent = "PC";
-   }
-}
-mj.viewport({
-    width : 360,
-    onAdjustment : update
-});
-if(mj.viewport.isIos()) {
-    window.addEventListener("load", function() { update(null); });
-}
+
 </script>
 <script type="text/javascript">
 var store_cd = 'SC00002';
