@@ -1,0 +1,162 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<base href="http://test.ds.shinsegae.com:88" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=360" />
+<title>OFF PRICE MARKET</title>
+
+
+
+<!-- 공통CSS & JS -->
+<link rel="stylesheet" type="text/css" href="/wallet/common/css/offPriceMarket.css?v=2" />
+<script type="text/javascript" src="/wallet/common/js/eventDisp/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="/wallet/common/js/eventDisp/mj.viewport.js"></script>
+<!-- //공통CSS & JS -->
+<script type="text/javascript">
+// VIEWPORT 설정
+function update(scale) {
+   document.getElementById("useragent").textContent = navigator.userAgent;
+   document.getElementById("scale").textContent = scale || "none";
+   if(mj.viewport.isIos()) {
+      document.getElementById("device").textContent = "iOS";
+   }else if (mj.viewport.isAndroid()) {
+      document.getElementById("device").textContent = "Android";
+   }else if (mj.viewport.isPCBrowser()) {
+      document.getElementById("device").textContent = "PC";
+   }
+}
+mj.viewport({
+    width : 360,
+    onAdjustment : update
+});
+if(mj.viewport.isIos()) {
+    window.addEventListener("load", function() { update(null); });
+}
+</script>
+<script type="text/javascript">
+var store_cd = 'SC00002';
+// 최초 로딩 시
+$(document).ready(function() {
+	var headerHeight = $(".header").height();
+    var gnbArr = $(".header").find(".gnb").find("li");
+    
+    // 로고 눌렀을 때 스크롤 이동
+    $(".header").find("h1").on("click", function() {
+        $("html, body").animate({scrollTop:0}, 600);
+        return false;
+    });
+    
+    // GNB 버튼 눌렀을 때 스크롤 이동
+    $(gnbArr).each(function() {
+        $(this).on("click", function() {
+            var index = $(this).index() + 1;
+            var click_tgt_cd = "OP0" + index.toString();
+            var click_tgt_dtl_cd = "00";
+            $.ajax({
+                type : "POST",
+                url : "/wallet/saveEventDispExeCnt",
+                data : {
+                    click_tgt_cd : click_tgt_cd
+                  , click_tgt_dtl_cd : click_tgt_dtl_cd
+                  , store_cd : store_cd
+                },
+                dataType : "json",
+                async : true, // true:비동기, false:동기
+                cache : false,
+                timeout : 30000,
+                success : function(data) {
+                    // 저장 성공 시
+                    if(data.result > 0) {
+                    	var top = $(".con0"+index).offset().top;
+                        $("html, body").animate({scrollTop : top - headerHeight + 1}, 600);
+                        return false;
+                    }
+                }
+            });
+        });
+    });
+    
+    // 스크롤시 메뉴 활성화
+    $(window).on("scroll", function() {
+        var winScroll = $(window).scrollTop();
+        var tit_top = $(".content").find("h2").offset().top;
+        var con01_top = $(".con01").offset().top - headerHeight;
+        var con02_top = $(".con02").offset().top - headerHeight;
+        var con03_top = $(".con03").offset().top - headerHeight;
+        var con04_top = $(".con04").offset().top - headerHeight;
+        
+        // 전체 끄기
+        if(winScroll >= tit_top) {
+        	$(".gnb").find("li").eq(0).find("img").attr("src", "/wallet/common/images/eventDisp/gnb01_off.jpg");
+            $(".gnb").find("li").eq(1).find("img").attr("src", "/wallet/common/images/eventDisp/gnb02_off.jpg");
+            $(".gnb").find("li").eq(2).find("img").attr("src", "/wallet/common/images/eventDisp/gnb03_off.jpg");
+            $(".gnb").find("li").eq(3).find("img").attr("src", "/wallet/common/images/eventDisp/gnb04_off.jpg");
+        }
+        
+        // 하이라이트
+        if(winScroll >= con01_top) {
+        	$(".gnb").find("li").eq(0).find("img").attr("src", "/wallet/common/images/eventDisp/gnb01_on.jpg");
+            $(".gnb").find("li").eq(1).find("img").attr("src", "/wallet/common/images/eventDisp/gnb02_off.jpg");
+            $(".gnb").find("li").eq(2).find("img").attr("src", "/wallet/common/images/eventDisp/gnb03_off.jpg");
+            $(".gnb").find("li").eq(3).find("img").attr("src", "/wallet/common/images/eventDisp/gnb04_off.jpg");
+        }
+        
+        // 이벤트 홀
+        if(winScroll >= con02_top) {
+        	$(".gnb").find("li").eq(0).find("img").attr("src", "/wallet/common/images/eventDisp/gnb01_off.jpg");
+            $(".gnb").find("li").eq(1).find("img").attr("src", "/wallet/common/images/eventDisp/gnb02_on.jpg");
+            $(".gnb").find("li").eq(2).find("img").attr("src", "/wallet/common/images/eventDisp/gnb03_off.jpg");
+            $(".gnb").find("li").eq(3).find("img").attr("src", "/wallet/common/images/eventDisp/gnb04_off.jpg");
+        }
+        
+        // 특가 기획
+        if(winScroll >= con03_top) {
+        	$(".gnb").find("li").eq(0).find("img").attr("src", "/wallet/common/images/eventDisp/gnb01_off.jpg");
+            $(".gnb").find("li").eq(1).find("img").attr("src", "/wallet/common/images/eventDisp/gnb02_off.jpg");
+            $(".gnb").find("li").eq(2).find("img").attr("src", "/wallet/common/images/eventDisp/gnb03_on.jpg");
+            $(".gnb").find("li").eq(3).find("img").attr("src", "/wallet/common/images/eventDisp/gnb04_off.jpg");
+        }
+        
+        // 스페셜 위캔드
+        if(winScroll >= con04_top) {
+            $(".gnb").find("li").eq(0).find("img").attr("src", "/wallet/common/images/eventDisp/gnb01_off.jpg");
+            $(".gnb").find("li").eq(1).find("img").attr("src", "/wallet/common/images/eventDisp/gnb02_off.jpg");
+            $(".gnb").find("li").eq(2).find("img").attr("src", "/wallet/common/images/eventDisp/gnb03_off.jpg");
+            $(".gnb").find("li").eq(3).find("img").attr("src", "/wallet/common/images/eventDisp/gnb04_on.jpg");
+        }
+    });
+});
+</script>
+</head>
+<body>
+    <div class="header">
+        <h1><img src="/wallet/common/images/eventDisp/logo.jpg" alt="Off Price Market"></h1>
+        <ul class="gnb">
+            <li><img src="/wallet/common/images/eventDisp/gnb01_off.jpg" alt="하이라이트"></li>
+            <li><img src="/wallet/common/images/eventDisp/gnb02_off.jpg" alt="이벤트 홀"></li>
+            <li><img src="/wallet/common/images/eventDisp/gnb03_off.jpg" alt="특가 기획"></li>
+            <li><img src="/wallet/common/images/eventDisp/gnb04_off.jpg" alt="스페셜 위캔드"></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2><img src="/wallet/common/images/eventDisp/offPriceTit.jpg" alt="Off Price Market"></h2>
+        <ul class="conList">
+            <li class="con01"><img src="/wallet/common/images/eventDisp/con_hightLight.jpg" alt="층 별 하이라이트"></li>
+            <li class="con02"><img src="/wallet/common/images/eventDisp/con_eventHall.jpg" alt="이벤트 홀"></li>
+            <li class="con03"><img src="/wallet/common/images/eventDisp/con_specialPrice.jpg" alt="특가 기획"></li>
+            <li class="con04"><img src="/wallet/common/images/eventDisp/con_specialWeekend.jpg" alt="스페셜 위캔드"></li>
+        </ul>
+    </div>
+    
+    <div id="bottom">
+        <a href="/wallet/eventDisp/toApp:home"><button id="btm_back" class="btn btm_back"><span>back</span></button></a>
+        <a href="/wallet/eventDisp/toApp:home"><button id="btm_home" class="btn btm_home"><span>home</span></button></a>
+    </div>
+</body>
+</html>
