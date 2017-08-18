@@ -8,16 +8,16 @@
 <meta name="format-detection" content="telephone=no" />
 <meta name="og:title" content="복리후생관 - e제너두" />
 <meta name="og:description" content="복리후생관 - e제너두" />
-<link rel="icon" href="/static/mobile/images/favicon.ico">
-<link href="/static/mobile/css/common.css" rel="stylesheet">
+<link rel="icon" href="http://ftest.benecafe.co.kr/static/mobile/images/favicon.ico">
+<link href="http://ftest.benecafe.co.kr/static/mobile/css/common.css" rel="stylesheet">
 <style type="text/css">
 	@charset "utf-8";
 	/* CSS Document */
 	</style>
-<script src="/static/mobile/js/lib/jquery.min.js"></script>
-<script src="/static/both/js/module/etbs.component.js"></script>
-<script src="/static/mobile/js/module/etbs.parent.common.js"></script>
-<script src="/static/mobile/js/module/common_pb_parent.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/jquery.min.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/both/js/module/etbs.component.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/module/etbs.parent.common.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/module/common_pb_parent.js"></script>
 <script>
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -25,17 +25,17 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 ga('create', 'UA-99893681-1', 'auto');
 ga('send', 'pageview');
-</script><script src="/static/mobile/js/lib/jquery-ui.js"></script>
-<script src="/static/mobile/js/lib/fonts/webfont.js"></script>
-<script src="/static/mobile/js/lib/swiper/index.js"></script>
-<script src="/static/mobile/js/lib/sly/plugins.js"></script>
-<script src="/static/mobile/js/lib/sly/sly.min.js"></script>
-<script src="/static/mobile/js/lib/sly/horizontal.js"></script>
-<script src="/static/mobile/js/lib/slick/slick.js"></script>
-<script src="/static/mobile/js/lib/form.js"></script>
-<script src="/static/both/js/lib/wisenut/beta.fix.js"></script>
-<script src="/static/both/js/lib/wisenut/ark_mo.js"></script>
-<script src="/static/mobile/js/module/etbs.search.js"></script>
+</script><script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/jquery-ui.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/fonts/webfont.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/swiper/index.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/sly/plugins.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/sly/sly.min.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/sly/horizontal.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/slick/slick.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/lib/form.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/both/js/lib/wisenut/beta.fix.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/both/js/lib/wisenut/ark_mo.js"></script>
+<script src="http://ftest.benecafe.co.kr/static/mobile/js/module/etbs.search.js"></script>
 
 <title>이제너두</title>
 <style>
@@ -49,7 +49,7 @@ ga('send', 'pageview');
 <body>
 <div class="iframe_wrap">
 	<div class="iframe">
-		<iframe src="/main/mainChild" id="main_frame" frameborder="0"></iframe>
+		<iframe src="http://ftest.benecafe.co.kr/main/mainChild" id="main_frame" frameborder="0"></iframe>
 	</div>
 </div>
 <script>
@@ -74,7 +74,7 @@ var child = window.frames[0];
 if(child){
 	var locationTo = etbs.param.getParam('lc');
 	if (locationTo == 'prod') {
-		child.location.href = '/product/product?prodNo=' + etbs.param.getParam('prodNo');
+		child.location.href = 'http://ftest.benecafe.co.kr/product/product?prodNo=' + etbs.param.getParam('prodNo');
 	}else if(locationTo){
 		child.location.href = etbs.param.getParam('lc');
 	}
@@ -229,7 +229,7 @@ $(document).ready(function(){
 				 */
 				function insertWishlist(){ // popWish.jsp에서 호출됨
 					var params = 'prodNo=' + $('#prodNo').val();
-					$.post('/product/insertWishlist', params, function(data) {
+					$.post('http://ftest.benecafe.co.kr/product/insertWishlist', params, function(data) {
 						closePop('#pop_scrab')
 					});
 				}
