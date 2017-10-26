@@ -1814,13 +1814,7 @@ var settings = {
 };
 
 function hideStep1() {
-	// 뷰포트 초기화 - 확대 가능 (171026 수정)
-	var width = window.screen.width;
-	if (width == 320){
-		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes');
-	}else{
-		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
-	}
+
 
 	setVisiblity('dim', false);
 	setVisiblity('step1ReqPop', false);
@@ -2000,11 +1994,12 @@ function isNoReqUse(bene_cd, bene_creat_seq){
 /*********************************************************************이벤트 신청 프로세스 변경 START*************************************************************************/
 // 이벤트 신청 팝업
 function reqEventPopNew(chkUpd, id){
-	alert("66")
+	alert("77")
 	
 	
 setTimeout(function() {
 $("#target").focus();
+$("#target").val("z");
 }, 1000); 
 
 	rtnChkUpd = chkUpd;
