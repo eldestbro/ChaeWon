@@ -2000,12 +2000,13 @@ function isNoReqUse(bene_cd, bene_creat_seq){
 /*********************************************************************이벤트 신청 프로세스 변경 START*************************************************************************/
 // 이벤트 신청 팝업
 function reqEventPopNew(chkUpd, id){
+	alert("11")
 	// 뷰포트 초기화 - 확대 불가 (171026 수정)
 	var width = window.screen.width;
 	if (width == 320){
 		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no');
 	}else{
-		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=10.0,minimum-scale=10.0,maximum-scale=10.0');
+		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=10.0,minimum-scale=10.0,maximum-scale=10.0,user-scalable=yes');
 	}
 
 	rtnChkUpd = chkUpd;
