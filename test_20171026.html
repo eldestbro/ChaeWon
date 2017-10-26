@@ -2000,15 +2000,11 @@ function isNoReqUse(bene_cd, bene_creat_seq){
 /*********************************************************************이벤트 신청 프로세스 변경 START*************************************************************************/
 // 이벤트 신청 팝업
 function reqEventPopNew(chkUpd, id){
-	alert("z1")
+	alert("z2222")
 	// 뷰포트 초기화 - 확대 불가 (171026 수정)
-	var width = window.screen.width;
-	if (width == 320){
-		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no');
-	}else{
-		document.getElementById('viewport').setAttribute('content','');
-		document.getElementById('viewport').setAttribute('content','initial-scale=1, maximum-scale=1');
-	}
+setTimeout(function() {
+	$("#target").focus()
+}, 1000); //
 
 
 	rtnChkUpd = chkUpd;
@@ -4075,7 +4071,7 @@ function stepAddressSetValues(juso, post_no){
 					<div class="cdt_bx">
 						<div class="cdt">
 							<!-- [D] : op_lst에서 선택된 내용이 op_lb 값으로 들어옴 -->
-							<input type="text" id="target" />
+							<input type="text" id="target" style="width:400px;" />
 							<a href="javascript:void(0)" id="selItemGroup" class="op_lb">선택</a>
 							<div id="divItemGroup" class="op_lst">
 								<ul>
