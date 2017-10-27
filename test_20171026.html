@@ -2001,10 +2001,7 @@ function isNoReqUse(bene_cd, bene_creat_seq){
 // 이벤트 신청 팝업
 function reqEventPopNew(chkUpd, id){
 	
-	// 뷰포트 초기화 - 확대 불가 (171026 수정)
-setTimeout(function() {
-	$("#target").focus()
-}, 1000); //
+	document.getElementById('viewport').setAttribute('content','width=640,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
 
 
 	rtnChkUpd = chkUpd;
