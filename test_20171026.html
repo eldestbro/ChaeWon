@@ -2000,8 +2000,9 @@ function isNoReqUse(bene_cd, bene_creat_seq){
 /*********************************************************************이벤트 신청 프로세스 변경 START*************************************************************************/
 // 이벤트 신청 팝업
 function reqEventPopNew(chkUpd, id){
-	
-	document.getElementById('viewport').setAttribute('content','width=640,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
+	var ww = $(window).width();
+	alert(ww)
+	document.getElementById('viewport').setAttribute('content','width='+ww+'px,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
 
 
 	rtnChkUpd = chkUpd;
