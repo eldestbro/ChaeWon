@@ -11,7 +11,9 @@
 				$('#viewport').attr('content','width=414px,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0');
 				var viewportSet = $('#viewport').attr('content');
 				alert(viewportSet)
-				$("#inputtest").focus();
+				setTimeout(function(e) {
+					$("#inputtest").trigger("click");
+				},1000)
 			});
 		});
 	</script>
