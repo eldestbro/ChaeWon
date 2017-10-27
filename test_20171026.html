@@ -1741,12 +1741,13 @@ function leadingZeros(n, digits) {
 </script>
 <script type="text/javascript">
 var width = window.screen.width;
+alert("시작")
 if (width == 320) {
- // document.write('<meta name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no">');
- //document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes">');
+  document.write('<meta name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=0.88,user-scalable=no">');
+ document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes">');
 } else {
- // document.write('<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">');
- //document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes">');
+  document.write('<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">');
+ document.write('<meta id="viewport" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes">');
 }
 </script>
 <script type="text/javascript">
@@ -1814,12 +1815,13 @@ var settings = {
 };
 
 function hideStep1() {
+	alert("hideStep1")
 	// 뷰포트 초기화 - 확대 가능 (171026 수정)
 	var width = window.screen.width;
 	if (width == 320){
-		//document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes');
+		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=0.88,minimum-scale=0.88,maximum-scale=4.0,user-scalable=yes');
 	}else{
-		//document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
+		document.getElementById('viewport').setAttribute('content','width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=4.0,user-scalable=yes');
 	}
 
 	setVisiblity('dim', false);
